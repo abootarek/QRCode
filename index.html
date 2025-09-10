@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Strong Muscles Code Check</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="logo">
+    <!-- Simple representation of the logo icon -->
+    <img src="image/logo.jpg" alt="Logo" width="100" height="100">
+    <p class="logo-text">STRONG</p>
+  </div>
+
+  <h2>Please Enter The Code on The Back Of The Package</h2>
+
+  <form id="codeForm">
+    <input type="text" id="codeInput" placeholder="Enter Code" />
+    <button type="button" id="checkBtn">Check</button>
+  </form>
+
+  <p class="message" id="message"></p>
+
+  <script>
+    const correctCode = "12345678";
+
+    document.getElementById("checkBtn").addEventListener("click", function() {
+      const userCode = document.getElementById("codeInput").value.trim();
+      const message = document.getElementById("message");
+
+      if (userCode === "") {
+        message.textContent = "⚠️ Please enter the code before checking.";
+        message.style.color = "orange";
+      } else if (userCode === correctCode) {
+        message.textContent = "✅ Your Product Is 100% Original";
+        message.style.color = "green";
+      } else {
+        message.textContent = "❌ Wrong Code, Please Try Again";
+        message.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
